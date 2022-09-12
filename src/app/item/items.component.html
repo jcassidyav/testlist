@@ -1,11 +1,12 @@
 <ActionBar title="My App"> </ActionBar>
 
 <GridLayout>
-  <ListView [items]="items">
+  <RadListView [items]="items" #recentList>
+  
     <ng-template let-item="item">
-      <StackLayout [nsRouterLink]="['/item', item.id]">
+      <StackLayout>
         <Label [text]="item.name"></Label>
       </StackLayout>
     </ng-template>
-  </ListView>
+  </RadListView>
 </GridLayout>

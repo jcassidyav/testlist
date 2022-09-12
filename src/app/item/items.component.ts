@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core'
+import { ObservableArray } from '@nativescript/core'
+import { RadListView } from 'nativescript-ui-listview'
 
 import { Item } from './item'
 import { ItemService } from './item.service'
@@ -8,11 +10,13 @@ import { ItemService } from './item.service'
   templateUrl: './items.component.html',
 })
 export class ItemsComponent implements OnInit {
-  items: Array<Item>
-
+  items: ObservableArray<Item> = new ObservableArray<Item>();
+  @ViewChild("recentList", { static: false }) list: ElementRef<RadListView>;
   constructor(private itemService: ItemService) {}
 
   ngOnInit(): void {
-    this.items = this.itemService.getItems()
+    this.items.push(...this.itemService.getItems());
+    this.items.forEach((value) => console.log("Value:", value.name, value.id));
+   // setTimeout(()=>{this.list.nativeElement.refresh()}, 1000);
   }
 }

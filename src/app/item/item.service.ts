@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core'
+import { ObservableArray } from '@nativescript/core'
 
 import { Item } from './item'
 
@@ -6,7 +7,7 @@ import { Item } from './item'
   providedIn: 'root',
 })
 export class ItemService {
-  private items = new Array<Item>(
+  private items = new ObservableArray<Item>(
     { id: 1, name: 'Ter Stegen', role: 'Goalkeeper' },
     { id: 3, name: 'Piqué', role: 'Defender' },
     { id: 4, name: 'I. Rakitic', role: 'Midfielder' },
@@ -31,7 +32,7 @@ export class ItemService {
     { id: 25, name: 'Masip', role: 'Goalkeeper' }
   )
 
-  getItems(): Array<Item> {
+  getItems(): ObservableArray<Item> {
     return this.items
   }
 
