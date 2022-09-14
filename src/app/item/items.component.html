@@ -1,12 +1,122 @@
 <ActionBar title="My App"> </ActionBar>
 
 <GridLayout>
-  <RadListView [items]="items" #recentList>
-  
-    <ng-template let-item="item">
-      <StackLayout>
-        <Label [text]="item.name"></Label>
-      </StackLayout>
+  <RadListView [items]="items" #recentList [itemTemplateSelector]="templateSelector">
+
+    <ng-template tkTemplateKey="even" let-item="item">
+     
+        <StackLayout class="p-0" touchDelay=".5" ignoreTouchAnimation="true">
+          <GridLayout rows="*" columns="16*,3*" style="background-color: bisque;">
+            <StackLayout row="0" col="0" class="action-grid">
+              <GridLayout rows="*,*,*" columns="3*,5*">
+
+                <Label row="0" col="0" text="tet:"></Label>
+                <Label row="0" col="1" [text]="item.name"></Label>
+
+                <Label row="1" col="0" text="test:"></Label>
+                <Label row="1" col="1" [text]="item.name"></Label>
+
+                <Label row="2" col="0" text="Effective:"></Label>
+                <Label row="2" col="1" [text]="item.name"></Label>
+              </GridLayout>
+
+
+            </StackLayout>
+
+
+            <Label row="0" col="1" text="X"></Label>
+          </GridLayout>
+        </StackLayout>
+      
     </ng-template>
+    <ng-template tkTemplateKey="even-actions" let-item="item">
+     
+      <StackLayout class="p-0" touchDelay=".5" ignoreTouchAnimation="true">
+        <GridLayout rows="*" columns="16*,3*" style="background-color: bisque;">
+          <StackLayout row="0" col="0" class="action-grid">
+            <GridLayout rows="*,*,*" columns="3*,5*">
+
+              <Label row="0" col="0" text="tet:"></Label>
+              <Label row="0" col="1" [text]="item.name"></Label>
+
+              <Label row="1" col="0" text="test:"></Label>
+              <Label row="1" col="1" [text]="item.name"></Label>
+
+              <Label row="2" col="0" text="Effective:"></Label>
+              <Label row="2" col="1" [text]="item.name"></Label>
+            </GridLayout>
+
+
+            <StackLayout orientation="horizontal" style="padding: 0 0 0 0;">
+              <Label style="font-size: 16px" text="X"></Label>
+              <Label style="font-size: 12px" [text]="item.name"></Label>
+
+            </StackLayout>
+          </StackLayout>
+
+
+          <Label row="0" col="1" text="X"></Label>
+        </GridLayout>
+      </StackLayout>
+    
+  </ng-template>
+    <ng-template tkTemplateKey="odd" let-item="item">
+
+        <StackLayout class="p-0"  touchDelay=".5" ignoreTouchAnimation="true">
+          <GridLayout rows="*" columns="16*,3*"  style="background-color: aquamarine;">
+            <StackLayout row="0" col="0" class="action-grid">
+              <GridLayout rows="*,*,*" columns="3*,5*">
+
+                <Label row="0" col="0" text="tet:"></Label>
+                <Label row="0" col="1" [text]="item.name"></Label>
+
+                <Label row="1" col="0" text="test:"></Label>
+                <Label row="1" col="1" [text]="item.name"></Label>
+
+                <Label row="2" col="0" text="Effective:"></Label>
+                <Label row="2" col="1" [text]="item.name"></Label>
+              </GridLayout>
+
+
+       
+            </StackLayout>
+
+
+            <Label row="0" col="1" text="X"></Label>
+          </GridLayout>
+        </StackLayout>
+      
+    </ng-template>
+    <ng-template tkTemplateKey="odd-actions" let-item="item">
+
+      <StackLayout class="p-0"  touchDelay=".5" ignoreTouchAnimation="true">
+        <GridLayout rows="*" columns="16*,3*"  style="background-color: aquamarine;">
+          <StackLayout row="0" col="0" class="action-grid">
+            <GridLayout rows="*,*,*" columns="3*,5*">
+
+              <Label row="0" col="0" text="tet:"></Label>
+              <Label row="0" col="1" [text]="item.name"></Label>
+
+              <Label row="1" col="0" text="test:"></Label>
+              <Label row="1" col="1" [text]="item.name"></Label>
+
+              <Label row="2" col="0" text="Effective:"></Label>
+              <Label row="2" col="1" [text]="item.name"></Label>
+            </GridLayout>
+
+
+            <StackLayout orientation="horizontal" style="padding: 0 0 0 0;">
+              <Label style="font-size: 16px" text="X"></Label>
+              <Label style="font-size: 12px" [text]="item.name"></Label>
+
+            </StackLayout>
+          </StackLayout>
+
+
+          <Label row="0" col="1" text="X"></Label>
+        </GridLayout>
+      </StackLayout>
+    
+  </ng-template>
   </RadListView>
 </GridLayout>

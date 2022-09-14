@@ -19,4 +19,11 @@ export class ItemsComponent implements OnInit {
     this.items.forEach((value) => console.log("Value:", value.name, value.id));
    // setTimeout(()=>{this.list.nativeElement.refresh()}, 1000);
   }
+
+  templateSelector = (item: Item, index: number): string => {
+    const color = index % 2 === 0 ? "odd" : "even";
+    const result= color + (item.role == "Defender"? "-actions":"");
+    console.log(result, color, item.role);
+    return result;
+};
 }

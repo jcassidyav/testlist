@@ -9,11 +9,11 @@ import { Item } from './item'
 export class ItemService {
   private items = new ObservableArray<Item>(
     { id: 1, name: 'Ter Stegen', role: 'Goalkeeper' },
-    { id: 3, name: 'Piqué', role: 'Defender' },
+    { id: 3, name: 'Piqué', role: 'Midfielder' },
     { id: 4, name: 'I. Rakitic', role: 'Midfielder' },
     { id: 5, name: 'Sergio', role: 'Midfielder' },
-    { id: 6, name: 'Denis Suárez', role: 'Midfielder' },
-    { id: 7, name: 'Arda', role: 'Midfielder' },
+    { id: 6, name: 'Denis Suárez', role: 'Defender' },
+    { id: 7, name: 'Arda', role: 'Defender' },
     { id: 8, name: 'A. Iniesta', role: 'Midfielder' },
     { id: 9, name: 'Suárez', role: 'Forward' },
     { id: 10, name: 'Messi', role: 'Forward' },
